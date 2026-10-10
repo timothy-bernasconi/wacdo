@@ -2,7 +2,7 @@ import React from 'react'
 
 const Overlay = () => {
   return (
-    <div>
+       <div className="overlay">
       <span>Aucun restaurant trouvé</span>
     </div>
   )

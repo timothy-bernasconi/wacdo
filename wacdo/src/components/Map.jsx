@@ -17,17 +17,19 @@ function ChangeView({ center, zoom }) {
   const map = useMap()
   useEffect(() => {
     map.setView(center, zoom)
+    setTimeout(() => {
+      map.invalidateSize()
+    }, 100)
   }, [center, zoom, map])
   return null
 }
-
 function Map({ restaurants, center, zoom = 13 }) {
   return (
     <MapContainer 
   center={center} 
   zoom={zoom} 
   scrollWheelZoom={false}
-  style={{ height: '500px', width: '100%' }}
+ 
 >
       <ChangeView center={center} zoom={zoom} />
 
